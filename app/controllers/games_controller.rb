@@ -10,7 +10,7 @@ class GamesController < ApplicationController
     letters = params[:letters].split(' ')
     word = params[:word]
     if english(word) == true && letters_in_grid(word, letters) == true
-      @view = 'Great'
+      @view = "Score: #{word.size} points"
     elsif letters_in_grid(word, letters) == false
       @view = 'Letters not provided'
     else
